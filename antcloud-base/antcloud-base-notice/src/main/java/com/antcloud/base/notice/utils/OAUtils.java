@@ -20,7 +20,7 @@ import java.util.Objects;
 /**
  * 泛微 OA 工具类
  * 对接 OA 模块可直接使用
- * 有需要帮助请联系公众号：苍何
+ * 有需要帮助请联系系统管理员
  *
  * @author beg
  */

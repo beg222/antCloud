@@ -42,7 +42,7 @@
 //    /**
 //     * 修改作者
 //     */
-//    private final static String AUTHOR = "canghe";
+//    private final static String AUTHOR = "beg";
 //
 //    /**
 //     * 修改模块简称

@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      title: 'AntCloud',
+      title: '蚂蚁项目管理',
       logo: logoImg
     }
   }

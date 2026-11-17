@@ -407,7 +407,7 @@ public class ProjectTaskServiceImpl extends ServiceImpl<ProjectTaskMapper, Proje
 //            taskAssignRemindDTO.setOaTitle("任务指派提醒");
 //            taskAssignRemindDTO.setOaContext("【" + projectTaskMapper.queryNickName(username) + "】给您指派了任务【" + taskName + "】，请及时处理！");
 //            taskAssignRemindDTO.setLinkUrl(OAUtils.ssoCreate(host + "/antcloud-project/my-task/info?taskId=" + taskId));
-            // TODO: 2024.03.03 @canghe 推送消息暂时关闭
+            // TODO: 2024.03.03 @beg 推送消息暂时关闭
 //            RocketMqUtils.push2Wx(taskAssignRemindDTO);
 //        }
 

@@ -22,7 +22,7 @@ package com.antcloud.job.config;//package com.antcloud.job.config;
 //
 //        // quartz参数
 //        Properties prop = new Properties();
-//        prop.put("org.job.scheduler.instanceName", "cangheScheduler");
+//        prop.put("org.job.scheduler.instanceName", "antcloudScheduler");
 //        prop.put("org.job.scheduler.instanceId", "AUTO");
 //        // 线程池配置
 //        prop.put("org.job.threadPool.class", "org.job.simpl.SimpleThreadPool");
@@ -42,7 +42,7 @@ package com.antcloud.job.config;//package com.antcloud.job.config;
 //        prop.put("org.job.jobStore.tablePrefix", "QRTZ_");
 //        factory.setQuartzProperties(prop);
 //
-//        factory.setSchedulerName("cangheScheduler");
+//        factory.setSchedulerName("antcloudScheduler");
 //        // 延时启动
 //        factory.setStartupDelay(1);
 //        factory.setApplicationContextSchedulerContextKey("applicationContextKey");
