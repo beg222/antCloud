@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.laigeoffer.antcloud-cloud</groupId>
+        <groupId>com.antcloud</groupId>
         <artifactId>antcloud-modules</artifactId>
         <version>0.0.1</version>
     </parent>
@@ -56,22 +56,22 @@
 
 
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-security</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-datasource</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-swagger</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-api-system</artifactId>
         </dependency>
 

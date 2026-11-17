@@ -1,0 +1,50 @@
+package com.antcloud.workflow.service;
+
+
+import com.antcloud.base.core.core.domain.PageQuery;
+import com.antcloud.base.core.core.page.Table2DataInfo;
+import com.antcloud.workflow.domain.bo.WfCopyBo;
+import com.antcloud.workflow.domain.bo.WfTaskBo;
+import com.antcloud.workflow.domain.vo.WfCopyVo;
+
+import java.util.List;
+
+/**
+ * 流程抄送Service接口
+ *
+ * @author beg
+ * @date 2026/11/17
+ */
+public interface IWfCopyService {
+
+    /**
+     * 查询流程抄送
+     *
+     * @param copyId 流程抄送主键
+     * @return 流程抄送
+     */
+    WfCopyVo queryById(Long copyId);
+
+    /**
+     * 查询流程抄送列表
+     *
+     * @param wfCopy 流程抄送
+     * @return 流程抄送集合
+     */
+    Table2DataInfo<WfCopyVo> selectPageList(WfCopyBo wfCopy, PageQuery pageQuery);
+
+    /**
+     * 查询流程抄送列表
+     *
+     * @param wfCopy 流程抄送
+     * @return 流程抄送集合
+     */
+    List<WfCopyVo> selectList(WfCopyBo wfCopy);
+
+    /**
+     * 抄送
+     * @param taskBo
+     * @return
+     */
+    Boolean makeCopy(WfTaskBo taskBo);
+}

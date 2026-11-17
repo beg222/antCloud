@@ -1,7 +1,7 @@
 {
   "name": "antcloud-web",
   "version": "0.0.1-SNAPSHOT",
-  "description": "laigeoffer-antcloud",
+  "description": "antcloud",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
     "serve": "vue-cli-service serve",

@@ -1,0 +1,27 @@
+package com.antcloud.project.service.task;
+
+/**
+ * @author beg
+ * @date 2026/11/17
+ */
+public enum QueryLogEnum {
+    ALL(-1, "queryAllLogExecutor"),
+    TRENDS(1, "queryTrendsLogExecutor"),
+    DELIVERABLE(2, "queryDeliverableLogExecutor"),
+    COMMENT(3, "queryCommentLogExecutor");
+    private final Integer type;
+    private final String beanName;
+
+    QueryLogEnum(Integer type, String beanName) {
+        this.type = type;
+        this.beanName = beanName;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public String getBeanName() {
+        return beanName;
+    }
+}

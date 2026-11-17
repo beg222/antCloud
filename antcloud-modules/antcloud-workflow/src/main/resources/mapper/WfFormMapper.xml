@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.laigeoffer.antcloud.workflow.mapper.WfFormMapper">
+<mapper namespace="com.antcloud.workflow.mapper.WfFormMapper">
 
-    <resultMap type="com.laigeoffer.antcloud.workflow.domain.WfForm" id="WfFormResult">
+    <resultMap type="com.antcloud.workflow.domain.WfForm" id="WfFormResult">
         <result property="formId" column="form_id"/>
         <result property="formName" column="form_name"/>
         <result property="content" column="content"/>
@@ -15,7 +15,7 @@
         <result property="remark" column="remark"/>
     </resultMap>
 
-    <select id="selectFormVoList" resultType="com.laigeoffer.antcloud.workflow.domain.vo.WfFormVo">
+    <select id="selectFormVoList" resultType="com.antcloud.workflow.domain.vo.WfFormVo">
         SELECT
             t1.form_id AS formId,
             t1.form_name AS formName,

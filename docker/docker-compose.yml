@@ -36,7 +36,7 @@ services:
           '--lower-case-table-names=2'
         ]
     environment:
-      MYSQL_ROOT_PASSWORD: laigeoffer-antcloud #上线修改为复杂密码，否则很容易被黑
+      MYSQL_ROOT_PASSWORD: antcloud #上线修改为复杂密码，否则很容易被黑
   antcloud-redis:
     container_name: antcloud-redis
     image: redis

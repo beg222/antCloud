@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.laigeoffer.antcloud-cloud</groupId>
+        <groupId>com.antcloud</groupId>
         <artifactId>antcloud-modules</artifactId>
         <version>0.0.1</version>
     </parent>
@@ -56,42 +56,42 @@
 
 
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-security</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-datasource</artifactId>
         </dependency>
 
         <!-- antcloud-api-workflow -->
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-api-workflow</artifactId>
         </dependency>
 
         <!--swagger-->
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-swagger</artifactId>
         </dependency>
 
         <!--用户服务-->
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-api-system</artifactId>
         </dependency>
 
         <!--添加分布式事务-->
         <dependency>
-            <groupId>com.laigeoffer.antcloud-cloud</groupId>
+            <groupId>com.antcloud</groupId>
             <artifactId>antcloud-base-seata</artifactId>
         </dependency>
 
         <!--Rocketmq-消息提醒，注意：如果不需要此模块，请自行注释，否则项目无法启动-->
 <!--        <dependency>-->
-<!--            <groupId>com.laigeoffer.antcloud-cloud</groupId>-->
+<!--            <groupId>com.antcloud</groupId>-->
 <!--            <artifactId>antcloud-base-notice</artifactId>-->
 <!--        </dependency>-->
 

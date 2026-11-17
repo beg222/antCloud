@@ -1,6 +1,6 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.laigeoffer.antcloud.base.notice.consumer.OAMessageConsumer,\
-com.laigeoffer.antcloud.base.notice.service.impl.WorkWxUtilsServiceImpl,\
-com.laigeoffer.antcloud.base.notice.utils.PublicUtil,\
-com.laigeoffer.antcloud.base.notice.utils.RocketMqUtils,\
-com.laigeoffer.antcloud.base.notice.utils.MessageUtils
+com.antcloud.base.notice.consumer.OAMessageConsumer,\
+com.antcloud.base.notice.service.impl.WorkWxUtilsServiceImpl,\
+com.antcloud.base.notice.utils.PublicUtil,\
+com.antcloud.base.notice.utils.RocketMqUtils,\
+com.antcloud.base.notice.utils.MessageUtils

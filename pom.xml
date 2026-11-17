@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.laigeoffer.antcloud-cloud</groupId>
+    <groupId>com.antcloud</groupId>
     <artifactId>antcloud</artifactId>
     <version>0.0.1</version>
 
@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <laigeoffer.version>0.0.1</laigeoffer.version>
+        <antcloud.version>0.0.1</antcloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -279,67 +279,67 @@
             <!-- 核心模块通用包 -->
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-core</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-datasource</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
 
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-seata</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-security</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-sensitive</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-swagger</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <!--Rocketmq-消息提醒-->
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-notice</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-base-framework</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-api-system</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.laigeoffer.antcloud-cloud</groupId>
+                <groupId>com.antcloud</groupId>
                 <artifactId>antcloud-api-workflow</artifactId>
-                <version>${laigeoffer.version}</version>
+                <version>${antcloud.version}</version>
             </dependency>
 
             <!-- knife4j -->

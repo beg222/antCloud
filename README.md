@@ -4,7 +4,7 @@
   <a href="https://opensource.org/license/MIT"><img src="https://img.shields.io/github/license/laigeoffer/antcloud?color=rgb(25%2C%20121%2C%20255)" alt="The MIT License"></a>
   <a href=""><img src="https://img.shields.io/github/forks/laigeoffer/antcloud?color=green" alt="Forks"></a>
   <a href="https://laigeoffer.cn/"><img src="https://img.shields.io/badge/AntCloud-%E5%AE%98%E7%BD%91-green" alt="Official"></a>
-  <a href="https://github.com/laigeoffer/antcloud"><img src="https://img.shields.io/github/stars/laigeoffer/antcloud?style=flat-square&color=rgb(25%2C%20121%2C%20255)" alt="Stars"></a>    
+  <a href="https://github.com/antcloud"><img src="https://img.shields.io/github/stars/laigeoffer/antcloud?style=flat-square&color=rgb(25%2C%20121%2C%20255)" alt="Stars"></a>    
   <a href="https://antcloud.laigeoffer.cn/"><img src="https://img.shields.io/badge/AntCloud-%E4%BD%93%E9%AA%8C%E5%9C%B0%E5%9D%80-blue" alt="Experience"></a>  
 </p>
 
@@ -43,9 +43,9 @@ AntCloud 包括认证、流程、项目管理、用户、网关等服务。包�
 * 项目文档教程：https://laigeoffer.cn/
 * 在线体验地址：https://antcloud.laigeoffer.cn/
 
-![antcloud-业务架构图](https://cdn.tobebetterjavaer.com/stutymore/laigeoffer-antcloud-%E4%B8%9A%E5%8A%A1%E5%A4%A7%E5%9B%BE.png)
+![antcloud-业务架构图](https://cdn.tobebetterjavaer.com/stutymore/antcloud-%E4%B8%9A%E5%8A%A1%E5%A4%A7%E5%9B%BE.png)
 
-此为 AntCloud 微服务版本说明文档！单体版本说明文档请移步：[单体版本说明](https://github.com/laigeoffer/antcloud/blob/master/antcloud-boot/README.md)
+此为 AntCloud 微服务版本说明文档！单体版本说明文档请移步：[单体版本说明](https://github.com/antcloud/blob/master/antcloud-boot/README.md)
 
 
 ## 二、关于来个 offer 组织
@@ -60,7 +60,7 @@ AntCloud 包括认证、流程、项目管理、用户、网关等服务。包�
 
 项目|码云|GitHub|简介
 ---|---|---|---
-AntCloud| [Gitee](https://gitee.com/laigeoffer/antcloud) | [GitHub](https://github.com/laigeoffer/antcloud) | 一套智能项目管理系统，即将帮助不少同学在接下来的校招/社招中斩获满意 offer。
+AntCloud| [Gitee](https://gitee.com/antcloud) | [GitHub](https://github.com/antcloud) | 一套智能项目管理系统，即将帮助不少同学在接下来的校招/社招中斩获满意 offer。
 技术派| [Gitee](https://gitee.com/itwanger/paicoding) | [GitHub](https://github.com/itwanger/paicoding) | 一个前后端分离的社区项目，帮助过不少同学在秋招中斩获满意 offer。
 
 ## 三、项目详情
@@ -81,8 +81,8 @@ AntCloud| [Gitee](https://gitee.com/laigeoffer/antcloud) | [GitHub](https://gith
 优质的项目，离不开一张清晰的鸟瞰图（😄）。
 
 ### 3.2、项目演示
-- 项目仓库（GitHub）：https://github.com/laigeoffer/antcloud
-- 项目仓库（码云）：https://gitee.com/laigeoffer/antcloud （国内访问速度更快）
+- 项目仓库（GitHub）：https://github.com/antcloud
+- 项目仓库（码云）：https://gitee.com/antcloud （国内访问速度更快）
 - 项目演示地址：https://antcloud.laigeoffer.cn（微信搜索「苍何」，关注我们的公众号，回复 `antcloud` 获取账号和密码，帮我们增加一个粉丝，哈哈哈，开源不易，请满足一下我的虚荣心（😁）。）
 
 ![首页展示](https://cdn.tobebetterjavaer.com/stutymore/20240407163006.png)
@@ -97,7 +97,7 @@ AntCloud| [Gitee](https://gitee.com/laigeoffer/antcloud) | [GitHub](https://gith
 ### 3.4、代码结构
 
 ```
-com.laigeoffer.antcloud     
+com.antcloud     
 ├── antcloud-ui              // 前端框架 [1024]
 ├── antcloud-gateway         // 网关模块 [6880]
 ├── antcloud-auth            // 认证中心 [6800]
@@ -122,7 +122,7 @@ com.laigeoffer.antcloud
 ```
 
 ## 四、项目部署
-> 单体版本请参考：[单体版本部署手册](https://github.com/laigeoffer/antcloud/blob/master/docs/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B.md)
+> 单体版本请参考：[单体版本部署手册](https://github.com/antcloud/blob/master/docs/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B.md)
 ### 4.1、环境准备
 |    | 技术                  | 名称        | 版本         | 官网                                                                                                 |
 |----|---------------------|-----------|------------|----------------------------------------------------------------------------------------------------|
@@ -155,15 +155,15 @@ git clone git@github.com:laigeoffer/antcloud.git
 国内的小伙伴也可以直接使用码云 Gitee 上的镜像仓库地址拉取：
 
 ```
-git clone https://gitee.com/laigeoffer/antcloud.git
+git clone https://gitee.com/antcloud.git
 ```
 
 ②、直接下载压缩包
 
 也可以直接下载 GitHub 上的压缩包，然后解压到本地。
 
-- GitHub 地址：[https://github.com/laigeoffer/antcloud](https://github.com/laigeoffer/antcloud)
-- 码云地址：[https://gitee.com/laigeoffer/antcloud](https://gitee.com/laigeoffer/antcloud)
+- GitHub 地址：[https://github.com/antcloud](https://github.com/antcloud)
+- 码云地址：[https://gitee.com/antcloud](https://gitee.com/antcloud)
 
 ![下载项目源码压缩包](https://cdn.tobebetterjavaer.com/images/20240324/76023993f091417a800ec7da19989e88.png)
 
