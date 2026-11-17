@@ -44,7 +44,8 @@
 
 ### 2.1 系统架构
 
-![系统架构图](docs/images/antcloud-architecture.png)
+在antCloud中，系统架构图展示了整个系统的架构设计。整体项目包括了系统、认证、项目、代码生成、流程及网关服务。
+![架构图](docs/images/framework.png)
 
 一次请求的完整路径：
 
@@ -55,12 +56,11 @@
 5. 跨服务调用走 OpenFeign（接口定义集中在 `antcloud-api`），需要保证一致性的写操作由 Seata AT 模式接管，异步通知走 RocketMQ。
 
 > 代码生成（:6802）、定时任务（:6803）、监控中心（:6888）按需启动，不影响主链路。
+![系统架构图](docs/images/antcloud-architecture.png)
 
 ### 2.2 技术选型
 
-![技术选型图](docs/images/antcloud-tech-stack.png)
-
-每一层的取舍：
+![技术选型图](docs/images/xuanxing.png)
 
 | 层 | 选择 | 为什么 |
 | --- | --- | --- |
