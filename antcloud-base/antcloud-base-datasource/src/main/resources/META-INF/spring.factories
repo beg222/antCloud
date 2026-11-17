@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.laigeoffer.antcloud.base.datasource.properties.DruidProperties,\
+com.laigeoffer.antcloud.base.datasource.config.DruidConfig

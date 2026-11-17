@@ -1,0 +1,74 @@
+######################################################################
+# Build Tools
+
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+######################################################################
+# IDE
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### JRebel ###
+rebel.xml
+
+### NetBeans ###
+nbproject/private/
+build/*
+nbbuild/
+nbdist/
+.nb-gradle/
+
+######################################################################
+# Others
+*.log
+*.xml.versionsBackup
+*.swp
+
+!*/build/*.java
+!*/build/*.html
+!*/build/*.xml
+
+.DS_store
+*/.DS_store
+application-prod.yml
+
+*.jar
+
+######################################################################
+# Node / 前端
+node_modules/
+dist/
+.npm/
+.eslintcache
+npm-debug.log*
+yarn-error.log*
+
+######################################################################
+# 运行时产物
+logs/
+upload/
+temp/
+*.pid
+
+######################################################################
+# 本地环境
+*.local.yml
+.env.local
+.env.*.local

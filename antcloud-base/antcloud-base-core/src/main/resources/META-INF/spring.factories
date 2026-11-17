@@ -1,0 +1,11 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.laigeoffer.antcloud.base.core.utils.spring.SpringUtils,\
+com.laigeoffer.antcloud.base.core.config.AntCloudConfig,\
+com.laigeoffer.antcloud.base.core.config.MetaObjectHandlerConfig,\
+com.laigeoffer.antcloud.base.core.aspectj.RateLimiterAspect,\
+com.laigeoffer.antcloud.base.core.config.JacksonConfig,\
+com.laigeoffer.antcloud.base.core.config.MybatisPlusConfig,\
+com.laigeoffer.antcloud.base.core.config.ServerConfig,\
+com.laigeoffer.antcloud.base.core.config.ThreadPoolConfig,\
+com.laigeoffer.antcloud.base.core.config.redis.RedisConfig,\
+com.laigeoffer.antcloud.base.core.config.redis.RedisService

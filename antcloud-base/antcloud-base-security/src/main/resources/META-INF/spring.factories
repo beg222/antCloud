@@ -1,0 +1,11 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.laigeoffer.antcloud.base.security.aspect.InnerAuthAspect,\
+com.laigeoffer.antcloud.base.security.aspect.PreAuthorizeAspect,\
+com.laigeoffer.antcloud.base.security.service.TokenService,\
+com.laigeoffer.antcloud.base.security.handle.GlobalExceptionHandler,\
+com.laigeoffer.antcloud.base.security.config.WebMvcConfig,\
+com.laigeoffer.antcloud.base.security.aspect.LogAspect,\
+com.laigeoffer.antcloud.base.core.config.ResourcesConfig,\
+com.laigeoffer.antcloud.base.security.service.redisson.RedissonDistributedLock,\
+com.laigeoffer.antcloud.base.security.aspect.DistributedLockAspect,\
+com.laigeoffer.antcloud.base.security.config.RedissonConfig

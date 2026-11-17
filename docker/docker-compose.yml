@@ -1,0 +1,216 @@
+version : '3.8'
+services:
+  antcloud-nacos:
+    container_name: antcloud-nacos
+    image: nacos/nacos-server
+    build:
+      context: ./nacos
+    environment:
+      - MODE=standalone
+    volumes:
+      - ./nacos/logs/:/home/nacos/logs
+      - ./nacos/conf/application.properties:/home/nacos/conf/application.properties
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9849:9849"
+    depends_on:
+      - antcloud-mysql
+  antcloud-mysql:
+    container_name: antcloud-mysql
+    image: mysql:5.7
+    build:
+      context: ./mysql
+    ports:
+      - "33706:3306" # 有经验的开发不会直接暴露3306端口
+    volumes:
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/logs:/logs
+      - ./mysql/data:/var/lib/mysql
+    command: [
+          'mysqld',
+          '--innodb-buffer-pool-size=2G',
+          '--character-set-server=utf8mb4',
+          '--collation-server=utf8mb4_unicode_ci',
+          '--default-time-zone=+8:00',
+          '--lower-case-table-names=2'
+        ]
+    environment:
+      MYSQL_ROOT_PASSWORD: laigeoffer-antcloud #上线修改为复杂密码，否则很容易被黑
+  antcloud-redis:
+    container_name: antcloud-redis
+    image: redis
+    build:
+      context: ./redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/conf/redis.conf:/home/antcloud/redis/redis.conf
+      - ./redis/data:/data
+    command: redis-server /home/antcloud/redis/redis.conf
+  antcloud-gateway:
+    container_name: antcloud-gateway
+    build:
+      context: antcloud/gateway
+      dockerfile: dockerfile
+    ports:
+      - "6880:6880"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-redis
+      - antcloud-nacos
+    links:
+      - antcloud-redis
+      - antcloud-nacos
+  antcloud-auth:
+    container_name: antcloud-auth
+    build:
+      context: antcloud/auth
+      dockerfile: dockerfile
+    ports:
+      - "6800:6800"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-redis
+    links:
+      - antcloud-redis
+  antcloud-system:
+    container_name: antcloud-system
+    build:
+      context: antcloud/modules/system
+      dockerfile: dockerfile
+    ports:
+      - "6801:6801"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-redis
+      - antcloud-mysql
+    links:
+      - antcloud-redis
+      - antcloud-mysql
+  antcloud-gen:
+    container_name: antcloud-gen
+    build:
+      context: antcloud/modules/gen
+      dockerfile: dockerfile
+    ports:
+      - "6802:6802"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-mysql
+    links:
+      - antcloud-mysql
+  antcloud-job:
+    container_name: antcloud-job
+    build:
+      context: antcloud/modules/job
+      dockerfile: dockerfile
+    ports:
+      - "6803:6803"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-mysql
+    links:
+      - antcloud-mysql
+
+  antcloud-project:
+    container_name: antcloud-project
+    build:
+      context: antcloud/modules/project
+      dockerfile: dockerfile
+    ports:
+      - "6806:6806"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-redis
+      - antcloud-mysql
+    links:
+      - antcloud-redis
+      - antcloud-mysql
+
+  antcloud-workflow:
+    container_name: antcloud-workflow
+    build:
+      context: antcloud/modules/workflow
+      dockerfile: dockerfile
+    ports:
+      - "6808:6808"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_DISCOVERY_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_DISCOVERY_PASSWORD=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_SERVER-ADDR=http://antcloud-nacos:8848
+      - SPRING_CLOUD_NACOS_CONFIG_USERNAME=nacos
+      - SPRING_CLOUD_NACOS_CONFIG_PASSWORD=nacos
+      - SPRING_REDIS_HOST=antcloud-redis
+      - SPRING_REDIS_PORT=6379
+    depends_on:
+      - antcloud-redis
+      - antcloud-mysql
+    links:
+      - antcloud-redis
+      - antcloud-mysql
+
+
+  antcloud-monitor:
+    container_name: antcloud-monitor
+    build:
+      context: antcloud/monitor
+      dockerfile: dockerfile
+    ports:
+      - "6888:6888"

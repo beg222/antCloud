@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.laigeoffer.antcloud.base.swagger.config.SwaggerAutoConfiguration,\
+com.laigeoffer.antcloud.base.swagger.config.SwaggerWebConfiguration,\
+com.laigeoffer.antcloud.base.swagger.config.SwaggerBeanPostProcessor
