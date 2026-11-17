@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="antcloud-arch-title antcloud-arch-desc">
+        <title id="antcloud-arch-title">蚂蚁项目管理系统架构图</title>
+        <desc id="antcloud-arch-desc">浏览器经前端应用进入网关，网关路由到认证、系统、项目、流程四个微服务，服务统一依赖 Nacos、Seata、RocketMQ、Redis 与 MySQL。</desc><style type="text/css"><![CDATA[@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap');]]></style>
+
+        <style>
+          .tag  { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 7px; font-weight: 500; letter-spacing: 0.14em; fill: #6b7c96; }
+          .name { font-family: 'Geist', 'Noto Sans SC', 'Microsoft YaHei', sans-serif; font-size: 13px; font-weight: 600; fill: #16233b; }
+          .sub  { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #5a6b85; }
+          .note { font-family: 'Geist', 'Noto Sans SC', 'Microsoft YaHei', sans-serif; font-size: 10px; fill: #5a6b85; }
+          .zone { font-family: 'Geist', 'Noto Sans SC', 'Microsoft YaHei', sans-serif; font-size: 12px; font-weight: 500; fill: #6b7c96; }
+          .alab { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.06em; fill: #5a6b85; }
+          .clab { font-family: 'Geist', 'Noto Sans SC', 'Microsoft YaHei', sans-serif; font-size: 12px; font-weight: 500; fill: #5a6b85; }
+        </style>
+
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5a6b85"/></marker>
+          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1557ae"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f7f8fa"/>
+
+        <rect x="60" y="148" width="880" height="252" rx="8" fill="rgba(22,35,59,0.02)" stroke="rgba(22,35,59,0.10)" stroke-width="0.8"/>
+        <rect x="72" y="152" width="72" height="16" rx="2" fill="#f7f8fa"/>
+        <text class="zone" x="80" y="164">应用服务</text>
+
+        <rect x="60" y="432" width="880" height="176" rx="8" fill="rgba(22,35,59,0.02)" stroke="rgba(22,35,59,0.10)" stroke-width="0.8"/>
+        <rect x="72" y="436" width="72" height="16" rx="2" fill="#f7f8fa"/>
+        <text class="zone" x="80" y="448">基础设施</text>
+
+        <line x1="500" y1="100" x2="500" y2="180" stroke="#5a6b85" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="508" y="124" width="72" height="16" fill="#f7f8fa"/>
+        <text class="alab" x="514" y="135">HTTPS / REST</text>
+
+        <path d="M500,248 V272" fill="none" stroke="#1557ae" stroke-width="1.2"/>
+        <path d="M179,272 H821" fill="none" stroke="#1557ae" stroke-width="1.2"/>
+        <line x1="179" y1="272" x2="179" y2="308" stroke="#1557ae" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+        <line x1="393" y1="272" x2="393" y2="308" stroke="#1557ae" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+        <line x1="607" y1="272" x2="607" y2="308" stroke="#1557ae" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+        <line x1="821" y1="272" x2="821" y2="308" stroke="#1557ae" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+
+        <line x1="393" y1="376" x2="393" y2="464" stroke="#5a6b85" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <rect x="401" y="410" width="100" height="18" rx="2" fill="#f7f8fa"/>
+        <text class="clab" x="405" y="423">注册 · 配置</text>
+
+        <path d="M607,376 V416 Q607,424 615,424 H768 Q776,424 776,432 V464" fill="none" stroke="#5a6b85" stroke-width="1" marker-end="url(#arrow)"/>
+        <rect x="612" y="400" width="104" height="16" fill="#f7f8fa"/>
+        <text class="alab" x="616" y="411">MyBatis · Druid</text>
+
+        <rect x="390" y="36" width="220" height="64" rx="6" fill="rgba(90,107,133,0.10)" stroke="#6b7c96" stroke-width="1"/>
+        <text class="tag" x="402" y="56">FRONTEND</text>
+        <text class="name" x="402" y="76">管理后台前端</text>
+        <text class="sub" x="402" y="92">antcloud-ui · Vue 2 · :8080</text>
+
+        <rect x="380" y="184" width="240" height="64" rx="6" fill="rgba(21,87,174,0.08)" stroke="#1557ae" stroke-width="1.2"/>
+        <text class="tag" x="392" y="204" fill="#1557ae">GATEWAY</text>
+        <text class="name" x="392" y="224">统一网关</text>
+        <text class="sub" x="392" y="240">antcloud-gateway · :6880</text>
+
+        <rect x="84" y="312" width="190" height="64" rx="6" fill="#ffffff" stroke="#16233b" stroke-width="1"/>
+        <text class="tag" x="96" y="332">AUTH</text>
+        <text class="name" x="96" y="352">认证中心</text>
+        <text class="sub" x="96" y="368">antcloud-auth · :6800</text>
+
+        <rect x="298" y="312" width="190" height="64" rx="6" fill="#ffffff" stroke="#16233b" stroke-width="1"/>
+        <text class="tag" x="310" y="332">SYSTEM</text>
+        <text class="name" x="310" y="352">系统服务</text>
+        <text class="sub" x="310" y="368">antcloud-system · :6801</text>
+
+        <rect x="512" y="312" width="190" height="64" rx="6" fill="#ffffff" stroke="#16233b" stroke-width="1"/>
+        <text class="tag" x="524" y="332">PROJECT</text>
+        <text class="name" x="524" y="352">项目服务</text>
+        <text class="sub" x="524" y="368">antcloud-project · :6806</text>
+
+        <rect x="726" y="312" width="190" height="64" rx="6" fill="#ffffff" stroke="#16233b" stroke-width="1"/>
+        <text class="tag" x="738" y="332">WORKFLOW</text>
+        <text class="name" x="738" y="352">流程服务</text>
+        <text class="sub" x="738" y="368">antcloud-workflow · :6808</text>
+
+        <rect x="84" y="468" width="520" height="88" rx="6" fill="rgba(22,35,59,0.05)" stroke="#5a6b85" stroke-width="1"/>
+        <text class="tag" x="96" y="490">MIDDLEWARE</text>
+        <text class="name" x="96" y="510">中间件集群</text>
+        <text class="sub" x="96" y="528">Nacos · Seata · RocketMQ · Redis</text>
+        <text class="note" x="96" y="544">注册配置 / 分布式事务 / 异步消息 / 缓存</text>
+
+        <rect x="636" y="468" width="280" height="88" rx="6" fill="rgba(22,35,59,0.05)" stroke="#5a6b85" stroke-width="1"/>
+        <text class="tag" x="648" y="490">DATABASE</text>
+        <text class="name" x="648" y="510">MySQL 8</text>
+        <text class="sub" x="648" y="528">6 个业务库 · utf8mb4</text>
+        <text class="note" x="648" y="544">每服务独立库，禁止跨库查询</text>
+
+        <text class="note" x="60" y="660">监控中心 antcloud-monitor（:6888）注册到 Nacos；代码生成（:6802）与定时任务（:6803）按需启动。</text>
+      </svg>
