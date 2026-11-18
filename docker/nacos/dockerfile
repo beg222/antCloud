@@ -1,7 +1,7 @@
 # 基础镜像
-FROM nacos/nacos-server
+FROM nacos/nacos-server:v2.2.3
 # author
-MAINTAINER canghe
+LABEL maintainer="beg"
 
 
 # 复制conf文件到docker路径

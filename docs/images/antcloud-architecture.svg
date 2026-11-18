@@ -132,7 +132,7 @@
   <rect x="536" y="552" width="412" height="108" fill="#16233b" fill-opacity="0.045" stroke="#16233b" stroke-opacity="0.30"/>
   <text class="tag" x="552" y="572" fill="#8a99ad">DATABASE · 每服务独立库</text>
   <text class="spec-n" x="552" y="594">MySQL 8.0</text><text class="spec-r" x="616" y="594">utf8mb4 · InnoDB · :3306</text>
-  <text class="db" x="552" y="618">antcloud_system · antcloud_project · antcloud_workflow · antcloud_gen</text>
+  <text class="db" x="552" y="618">antcloud-system · antcloud-project · antcloud-workflow · antcloud-gen</text>
   <text class="note" x="552" y="644">不跨库 JOIN，跨服务取数走 Feign 接口。</text>
 
   <!-- ── legend ───────────────────────────────────────────── -->
