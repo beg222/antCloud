@@ -121,17 +121,17 @@ public class PublicUtil {
     private static String SERVER_PATH = "";
 
 
-    @Value("${antcloud.workWx.corpid}")
+    @Value("${antcloud.workWx.corpid:}")
     private void setCorpId(String corpId) {
         PublicUtil.CORP_ID = corpId;
     }
 
-    @Value("${antcloud.workWx.corpsecret}")
+    @Value("${antcloud.workWx.corpsecret:}")
     private void setCorpSecret(String corpSecret) {
         PublicUtil.CORP_SECRET = corpSecret;
     }
 
-    @Value("${antcloud.workWx.agentid}")
+    @Value("${antcloud.workWx.agentid:}")
     private void setAgentId(Integer agentid) {
         PublicUtil.AGENT_ID = agentid;
     }
@@ -140,7 +140,7 @@ public class PublicUtil {
         return AGENT_ID;
     }
 
-    @Value("${antcloud.workWx.path}")
+    @Value("${antcloud.workWx.path:}")
     private void setServerPath(String path) {
         SERVER_PATH = path;
     }

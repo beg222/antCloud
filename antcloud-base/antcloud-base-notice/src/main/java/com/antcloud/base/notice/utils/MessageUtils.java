@@ -20,7 +20,7 @@ public class MessageUtils {
      * 服务器host
      * */
     public static String host;
-    @Value("${antcloud.workWx.host}")
+    @Value("${antcloud.workWx.host:}")
     private void setHost(String host) {
         MessageUtils.host = host;
     }
@@ -29,7 +29,7 @@ public class MessageUtils {
      * 后端路由
      * */
     public static String path;
-    @Value("${antcloud.workWx.path}")
+    @Value("${antcloud.workWx.path:}")
     private void setPath(String path) {
         MessageUtils.path = path;
     }
@@ -38,7 +38,7 @@ public class MessageUtils {
      * appid
      * */
     public static String appid;
-    @Value("${antcloud.workWx.corpid}")
+    @Value("${antcloud.workWx.corpid:}")
     private void setAppid(String appid) {
         MessageUtils.appid = appid;
     }
@@ -47,7 +47,7 @@ public class MessageUtils {
      * agentid
      * */
     public static String agentid;
-    @Value("${antcloud.workWx.agentid}")
+    @Value("${antcloud.workWx.agentid:}")
     private void setAgentid(String agentid) {
         MessageUtils.agentid = agentid;
     }

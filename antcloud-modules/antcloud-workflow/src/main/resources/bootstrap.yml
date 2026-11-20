@@ -32,3 +32,22 @@ spring:
 logging:
   file:
     name: logs/${spring.application.name}/info.log
+
+# RocketMQ：连名字服务器 9876，生产者由 starter 自动装配
+rocketmq:
+  name-server: 192.168.88.130:9876
+  producer:
+    group: antcloud-notice-producer
+    send-message-timeout: 3000
+
+# 消息提醒
+antcloud:
+  notice:
+    # 打开后本服务会启动消费者（生产环境的消费方只开在这里）
+    consumer-enabled: true
+    topic: antcloud-notice
+    consumer-group: antcloud-notice-consumer
+    tag: WX_MESSAGE
+  workwx:
+    # 没有企业微信账号时保持 false：只记日志、不调企微接口
+    enabled: false

@@ -85,11 +85,11 @@
             <version>5.3.1</version>
         </dependency>
 
-        <!--Rocketmq-消息提醒，注意：如果不需要此模块，请自行注释，否则项目无法启动-->
-<!--        <dependency>-->
-<!--            <groupId>com.antcloud</groupId>-->
-<!--            <artifactId>antcloud-base-notice</artifactId>-->
-<!--        </dependency>-->
+        <!--消息提醒（RocketMQ），消费者由 antcloud.notice.consumer-enabled 控制是否启动-->
+        <dependency>
+            <groupId>com.antcloud</groupId>
+            <artifactId>antcloud-base-notice</artifactId>
+        </dependency>
 
     </dependencies>
 
